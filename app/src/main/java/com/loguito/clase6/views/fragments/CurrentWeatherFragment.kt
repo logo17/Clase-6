@@ -11,6 +11,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.jakewharton.rxbinding4.widget.textChanges
 import com.loguito.clase6.R
+import com.loguito.clase6.ext.mapToVisibility
 import com.loguito.clase6.viewmodels.CurrentWeatherViewModel
 import com.squareup.picasso.Picasso
 import java.util.concurrent.TimeUnit
@@ -59,7 +60,7 @@ class CurrentWeatherFragment : Fragment(R.layout.fragment_current_weather) {
         }
 
         viewModel.isLoading.observe(viewLifecycleOwner) {
-            progressBar.visibility = if (it) View.VISIBLE else View.GONE
+            progressBar.visibility = it.mapToVisibility()
         }
 
         viewModel.serverError.observe(viewLifecycleOwner) {
