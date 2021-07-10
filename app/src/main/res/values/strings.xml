@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Clase 6</string>
+    <string name="search_hint">Buscar</string>
+    <string name="server_error_message">Ha ocurrido un error.</string>
+</resources>
